@@ -1,42 +1,123 @@
-# Arrays and Strings
+# 📂 Static Arrays
 
-This folder contains solutions for array and string manipulation problems. Each solution is implemented in Python and includes problem descriptions, explanations, and test cases.
+### ✨ Concept
 
-## Problems
+- Fixed-size collection of elements of the same type.
+- Memory allocated once at creation (static).
+- Elements stored in contiguous memory.
+- Indexed access.
 
-1. **Two Sum**
-   - Problem: Find two numbers in an array that add up to a target value
-   - Solution: `two_sum.py`
-   - Time Complexity: O(n)
-   - Space Complexity: O(n)
+### 🕒 Time Complexity
 
-2. **Valid Parentheses**
-   - Problem: Check if a string of parentheses is valid
-   - Solution: `valid_parentheses.py`
-   - Time Complexity: O(n)
-   - Space Complexity: O(n)
+| Operation     | Time Complexity |
+|---------------|-----------------|
+| Access        | O(1)            |
+| Search        | O(n)            |
+| Insert/Delete | O(n)            |
 
-3. **Longest Substring Without Repeating Characters**
-   - Problem: Find the length of the longest substring without repeating characters
-   - Solution: `longest_substring.py`
-   - Time Complexity: O(n)
-   - Space Complexity: O(min(m, n)) where m is the size of the character set
+### 🧑‍💻 Example (Python)
 
-## How to Use
+```python
+arr = [10, 20, 30, 40, 50]
 
-1. Each solution file contains:
-   - Problem description
-   - Solution implementation
-   - Test cases
-   - Time and space complexity analysis
+# Access
+print(arr[2])  # Output: 30
 
-2. To run a solution:
-   ```bash
-   python <solution_file>.py
-   ```
+# Search
+if 40 in arr:
+    print("Found!")
 
-## Notes
+# Insert (simulate by creating a new array)
+arr = arr[:2] + [25] + arr[2:]
 
-- All solutions are implemented in Python 3
-- Each solution includes comments explaining the approach
-- Test cases are included to verify the correctness of the solution 
+# Delete
+arr.remove(20)
+print(arr)
+
+---
+
+### 📂 DynamicArrays/README.md
+
+```markdown
+# 📂 Dynamic Arrays
+
+### ✨ Concept
+
+- Resizable array — size can change at runtime.
+- Backed by a static array with dynamic reallocation.
+- Efficient for append-heavy use cases.
+
+### 🕒 Time Complexity
+
+| Operation     | Time Complexity |
+|---------------|-----------------|
+| Access        | O(1)            |
+| Search        | O(n)            |
+| Insert/Delete | O(n)            |
+| Append        | O(1) amortized  |
+
+### 🧑‍💻 Example (Python)
+
+```python
+arr = []
+
+# Append
+arr.append(10)
+arr.append(20)
+arr.append(30)
+
+print(arr)  # Output: [10, 20, 30]
+
+# Access
+print(arr[1])  # Output: 20
+
+# Insert at index
+arr.insert(1, 15)
+print(arr)  # Output: [10, 15, 20, 30]
+
+# Delete
+arr.remove(15)
+print(arr)
+
+---
+
+### 📂 Strings/README.md
+
+```markdown
+# 📂 Strings
+
+### ✨ Concept
+
+- Sequence of characters.
+- Typically immutable.
+- Supports slicing, searching, concatenation, etc.
+- Commonly used for text processing.
+
+### 🕒 Time Complexity
+
+| Operation          | Time Complexity |
+|--------------------|-----------------|
+| Access (indexing)  | O(1)            |
+| Search (substring) | O(n)            |
+| Concatenation      | O(n)            |
+| Substring          | O(n)            |
+
+### 🧑‍💻 Example (Python)
+
+```python
+s = "hello world"
+
+# Access
+print(s[1])  # Output: 'e'
+
+# Search (substring)
+if "world" in s:
+    print("Found!")
+
+# Concatenation
+s2 = s + "!"
+print(s2)  # Output: 'hello world!'
+
+# Substring
+sub = s[0:5]
+print(sub)  # Output: 'hello'
